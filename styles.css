@@ -1,0 +1,377 @@
+*:where( :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: "Lato", sans-serif;
+
+    .layout-box {
+        max-inline-size: 1280px;
+        margin-inline: auto;
+    }
+
+    /* LOGO */
+    .logo {
+        width: 150px;
+        height: 150px;
+        display: flex;
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+
+    /* ----------------HEADER */
+    .header {
+        background-color: #46a1af;
+        background-position: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        block-size: 125px;
+        padding: 50px;
+
+        .nav {
+            .menu {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                letter-spacing: .75px;
+                color: white;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    border-bottom: 2px solid transparent;
+                    padding-block-end: 5px;
+                }
+
+                .item:hover {
+                    cursor: pointer;
+                    border-bottom: 1px solid #ffffff;
+                }
+            }
+
+            /* HEADER SOCIAL MEDIA */
+            .social {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                fill: #ffffff;
+                list-style-type: none;
+                cursor: pointer;
+                margin-right: 30px;
+            }
+        }
+
+    }
+
+    /* ----------------MAIN */
+    .main {
+
+        /* PICTURE INTRO */
+        .section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                    rgba(0, 0, 0, 0.5) 100%), url(pictures/site-intro-3.png);
+            background-size: cover;
+            background-position: right middle, left top;
+            background-repeat: no-repeat, repeat;
+        }
+
+        .section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .section .intro-data {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            width: 35%;
+            height: auto;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+
+            .title {
+                text-transform: uppercase;
+                font-size: 40px;
+
+            }
+
+            .subtitle {
+                font-size: 40px;
+                padding-top: 5px;
+            }
+        }
+
+        /* ABOUT MYSELF */
+        .about {
+            background-color: #ffffff;
+            display: flex;
+            padding-bottom: 70px;
+        }
+
+        .image {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            margin-right: 60px;
+            margin-left: 90px;
+            margin-top: -60px;
+            position: relative;
+        }
+
+        .introduction {
+            margin-top: 70px;
+            margin-right: 125px;
+            color: black;
+
+            .heading {
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                font-size: 22px;
+            }
+
+            .separator {
+                padding: 20px;
+            }
+
+            .text {
+                font-size: 17px;
+                line-height: 25px;
+            }
+        }
+
+        /* EDUCATION */
+        .education {
+            background-color: #6ac3d1;
+            display: flex;
+            flex-direction: row;
+            padding-right: 100px;
+            padding-left: 100px;
+
+            .education-row {
+                display: flex;
+                flex-flow: row nowrap;
+                text-align: center;
+                justify-content: center;
+
+                .education-section {
+                    padding: 35px;
+
+                    .source {
+                        padding-bottom: 5px;
+                    }
+
+                    .data {
+                        .education-title {
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-size: 15px;
+                            color: #ffffff;
+
+                        }
+
+                        .education-text {
+                            font-size: 15px;
+                            margin-top: 10px;
+                            color: black;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* EXPERIENCE - Part of it is outside of the box because I want to make a transition*/
+        .experience-section {
+            background-color: #ffffff;
+            padding: 90px;
+
+            .container {
+                .heading {
+                    font-weight: bold;
+                    font-size: 35px;
+                    text-transform: uppercase;
+                    padding-left: 150px;
+                    padding-right: 300px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.59) 100%), url(pictures/site-intro-3.png);
+                    background-position-x: 350px;
+                    background-position-y: -698px;
+                    color: #ffffff;
+                }
+
+            }
+        }
+
+        .experience-grid {
+            background: #ffffff;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 300px 300px;
+            justify-content: center;
+            grid-gap: 15px;
+
+            .experience-container {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 25px;
+                padding-top: 100px;
+
+                &.experience-1 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/capacity-crane.png);
+                }
+
+                &.experience-2 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/legs-diamond.jpeg);
+                }
+
+                &.experience-3 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/lucia-gelato.png);
+                }
+
+                &.experience-4 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/engel&volkers.jpeg);
+                }
+
+                &.experience-5 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/global-commerce-media.jpeg);
+                }
+
+                &.experience-6 {
+                    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%,
+                            rgba(0, 0, 0, 0.5) 100%), url(pictures/codespace.jpeg);
+                }
+
+                .data {
+                    background-color: #46a1af;
+                    padding: 25px 30px;
+
+                    .title {
+                        font-weight: bold;
+                        font-size: 15px;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                        padding-bottom: 10px;
+
+                    }
+
+                    .subtitle {
+                        color: #ffffff;
+                        font-weight: bold;
+                        margin-top: 5px;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    /* FOOTER */
+    .footer {
+        background-color: #46a1af;
+        padding: 30px;
+        display: flex;
+
+        .data {
+            padding-left: 20px;
+
+            .logo-footer {
+                height: 100px;
+                width: 100px;
+            }
+
+            .copyright {
+                color: white;
+                font-size: 15px;
+            }
+        }
+
+        .nav {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: white;
+
+            .menu {
+                display: flex;
+                color: #ffffff;
+                padding-left: 485px;
+                padding-top: 50px;
+
+                .item {
+                    font-size: 15px;
+                    font-weight: bold;
+                    border-bottom: 2px solid transparent;
+
+                    &:hover {
+                        cursor: pointer;
+                        border-bottom: 1px solid #ffffff;
+
+                    }
+                }
+
+                .separator {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    /* CONTACT RIGHT SIDE NAV */
+    .buttons-right-nav {
+        position: fixed;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        box-shadow: 0px 0px 51px 3px rgba(0, 0, 1, 0.2);
+        z-index: 2;
+        cursor: pointer;
+
+        .item {
+            width: 60px;
+            height: 60px;
+            background-color: #46a1af;
+            display: grid;
+            place-items: center;
+
+            .svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
